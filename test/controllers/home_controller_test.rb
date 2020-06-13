@@ -2,8 +2,15 @@ require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get top" do
-    get home_top_url
+    get root_url
     assert_response :success
+    assert_select "title", "Top | SOKAGU"
+  end
+  
+  test "should get about" do
+    get about_url
+    assert_response :success
+    assert_select "title", "About | SOKAGU"
   end
 
 end
