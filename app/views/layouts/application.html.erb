@@ -7,8 +7,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
+  <header>
+    <div class="header-logo">
+      <%= link_to("SOKAGU","/") %>
+    </div>
+    <ul class="header-menus">
+      <li>
+        <%= link_to("SOKAGUとは", "/about") %>
+      </li>
+      <li>
+          <%= link_to("家具一覧", "/posts/index") %>
+        </li>
+    </ul>
+  </header>
 
   <body>
     <%= yield %>
   </body>
 </html>
+
+
