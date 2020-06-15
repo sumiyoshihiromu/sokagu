@@ -58,10 +58,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   clear: both;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: space-around;
 }
 
 /* ヘッダー ================================ */
@@ -176,9 +172,10 @@ header {
 
 .form-heading {
   font-weight: 300;
-  margin: 60px 0 20px;
-  font-size: 48px;
-  color: #bcc8d4;
+  margin: 60px auto;
+  font-size: 46px;
+  color: black;
+  text-align: center;
 }
 
 .form-body {

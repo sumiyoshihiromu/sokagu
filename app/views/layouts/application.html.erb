@@ -8,24 +8,33 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
-  <header>
-    <div class="header-logo">
-      <%= link_to("SOKAGU","/") %>
-    </div>
-    <ul class="header-menus">
-      <li>
-        <%= link_to("SOKAGUとは", "/about") %>
-      </li>
-      <li>
-        <%= link_to("家具一覧", "/posts/index") %>
-      </li>
-      <li>
-        <%= link_to("新規投稿", "/posts/new") %>
-      </li>
-    </ul>
-  </header>
-
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to("SOKAGU","/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("SOKAGUとは", "/about") %>
+        </li>
+        <li>
+          <%= link_to("家具を探す", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+        <li>
+          <%= link_to("新規ユーザー登録", "/signup") %>
+        </li>
+      </ul>
+    </header>
+
+  
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
