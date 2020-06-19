@@ -70,6 +70,11 @@ class UsersController < ApplicationController
     redirect_to("/login")
   end
   
+  def bookmarks
+    @user = User.find_by(id: params[:id])
+    @bookmarks = Bookmark.where(user_id: @user.id)
+  end
+  
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       flash[:notice] ="権限がありません"

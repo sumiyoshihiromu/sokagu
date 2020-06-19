@@ -5,16 +5,18 @@
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-      <%= link_to("プロフィールを編集", "/users/#{@user.id}/edit") %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
     
     <ul class="user-tabs">
-      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to("ブックマーク", "/users/#{@user.id}/bookmarks") %></li>
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("ブックマーク", "/users/#{@user.id}/bookmarks") %></li>
     </ul>
     
-    <% @user.posts.each do |post| %>
+    <% @bookmarks.each do |bookmark| %>
+      <% post = Post.find_by(id: bookmark.post_id) %>
+      
       <div class="posts-index-item">
         <div class="post-left">
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
@@ -27,6 +29,5 @@
         </div>
       </div>
     <% end %>
-    
   </div>
 </div>
