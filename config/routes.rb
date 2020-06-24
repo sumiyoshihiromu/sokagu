@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
   
+  post "bookmarks/:post_id/create" => "bookmarks#create"
+  post "bookmarks/:post_id/destroy" => "bookmarks#destroy"
+  
   get "login" => "users#login_form"
   post "login" => "users#login"
   post "logout" => "users#logout"
   
+  post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
   
   get "signup" => "users#new"
   get "users/:id" => "users#show"
+  
+  get "users/:id/bookmarks" => "users#bookmarks"
   
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"

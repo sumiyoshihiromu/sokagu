@@ -44,6 +44,7 @@ GEM
       rest-client (~> 2.0)
     ansi (1.5.0)
     arel (8.0.0)
+    bcrypt (3.1.13)
     bindex (0.8.1)
     builder (3.2.4)
     byebug (9.0.6)
@@ -400,6 +401,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   byebug (= 9.0.6)
   carrierwave (= 1.2.2)
   coffee-rails (= 4.2.2)

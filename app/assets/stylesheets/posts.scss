@@ -83,6 +83,21 @@
   font-size: 14px;
 }
 
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.post-menus {
+  float: right;
+}
+
+.post-menus a, .post-menus input {
+  color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
 /* posts/new ================================ */
 .posts-new textarea {
   font-size: 20px;
