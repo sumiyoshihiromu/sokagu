@@ -11,6 +11,15 @@
       <div class="post-time">
         <%= @post.created_at.to_s(:datetime) %>
       </div>
+      <% if Bookmark.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <%= link_to("/bookmarks/#{@post.id}/destroy", {method: "post"}) do %>
+        <span class="fa fa-bookmark like-btn-unlike"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/bookmarks/#{@post.id}/create", {method: "post"}) do %>
+         <span class="fa fa fa-bookmark-o like-btn"></span>
+        <% end %>
+      <% end %>
       <% if @post.user_id == @current_user.id %>
         <div class="post-menus">
           <%= link_to("編集", "/posts/#{@post.id}/edit") %>

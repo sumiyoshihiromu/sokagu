@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :authenticate_user, {only: [:show, :edit, :update]}
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
   
@@ -51,8 +51,8 @@ class UsersController < ApplicationController
   end
   
   def login
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
       redirect_to("/posts/index")
@@ -68,6 +68,11 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to("/login")
+  end
+  
+  def bookmarks
+    @user = User.find_by(id: params[:id])
+    @bookmarks = Bookmark.where(user_id: @user.id)
   end
   
   def ensure_correct_user
