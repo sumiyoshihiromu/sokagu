@@ -28,7 +28,7 @@
             <%= link_to("家具を投稿", "/posts/new") %>
           </li>
           <li>
-            <%= link_to("ログアウト", "/logout", {method: :post}) %>
+            <%= link_to "ログアウト", "/logout", method: :post, data: { confirm: '本当にログアウトして良いですか?'} %>
           </li>
           <li>
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>

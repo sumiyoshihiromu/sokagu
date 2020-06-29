@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get "users/:id" => "users#show"
   
   get "users/:id/bookmarks" => "users#bookmarks"
+  get "users/:id/messages" => "users#messages"
+  
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
   
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"

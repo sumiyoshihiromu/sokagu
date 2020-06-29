@@ -1,0 +1,38 @@
+<div class="main">
+	<div class="container">
+		<div class="form-heading">
+			<% @entries.each do |e| %>
+				<% if @current_user.id != e.user_id %>
+　 　　				<a href="/users/<%= e.user.id %>"><%= e.user.name%></a>
+　　			<% end %>
+			<% end %>
+		</div>
+		<% if @messages.present? %>
+			<% @messages.each do |m| %>
+				<div class="messages-index-item">
+					<div class="messages-left">
+						<img src="<%= "/user_images/#{m.user.image_name}" %>">
+					</div>
+					<div class="messages-right">
+						<div class="messages-user-name">
+							<strong><a href="/users/<%= m.user_id %>"><%= m.user.name %></a></strong><%= m.created_at.to_s(:datetime2) %><br>
+							<div class="message-content"><%= m.content %></div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		<% else %>
+			<h3>メッセージはまだありません</h3>
+		<% end %>
+		<div class="form">
+	    	<div class="form-body">
+				<%= form_for @message do |f| %>
+					<%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+					<%= f.hidden_field :room_id, :value => @room.id %>
+					<br>
+				 	<%= f.submit "送信する" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

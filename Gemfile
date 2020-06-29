@@ -12,6 +12,7 @@ gem 'carrierwave',  '1.2.2'
 gem 'mini_magick',  '4.7.0'
 gem 'rails-i18n'
 gem 'bcrypt'
+gem 'data-confirm-modal'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

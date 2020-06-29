@@ -22,9 +22,24 @@
       <% end %>
       <% if @post.user_id == @current_user.id %>
         <div class="post-menus">
-          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+          <%= link_to "編集", "/posts/#{@post.id}/edit" %>
+          <%= link_to "削除", "/posts/#{@post.id}/destroy", method: "post", data: { confirm: '本当に削除して良いですか?'} %>
         </div>
+      <% else %>
+        <% if @isRoom == true %>
+          <div class="post-menus">
+            <a href="/rooms/<%= @roomId %>">連絡を取る</a>
+          </div>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, :value=> @user.id %>
+            <% end %>
+            <div class="post-menus">
+              <%= f.submit "連絡を取る" %>
+            </div>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>

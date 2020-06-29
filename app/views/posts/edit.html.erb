@@ -3,7 +3,7 @@
     <h1 class="form-heading">編集する</h1>
     <%= form_tag("/posts/#{@post.id}/update") do %>
 	    <div class="form">
-	      <div class="form-body">
+	    	<div class="form-body">
 	      	<% @post.errors.full_messages.each do |message| %>
             <div class="form-error">
               <%= message %>

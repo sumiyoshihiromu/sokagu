@@ -62,6 +62,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    data-confirm-modal (1.6.3)
+      railties (>= 3.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dry-inflector (0.2.0)
@@ -405,6 +407,7 @@ DEPENDENCIES
   byebug (= 9.0.6)
   carrierwave (= 1.2.2)
   coffee-rails (= 4.2.2)
+  data-confirm-modal
   fog (= 1.42)
   guard (= 2.16.2)
   guard-minitest (= 2.4.4)

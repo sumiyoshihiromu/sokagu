@@ -168,6 +168,7 @@ header {
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
+  margin-top: 60px;
 }
 
 .form-heading {
@@ -176,6 +177,15 @@ header {
   font-size: 46px;
   color: black;
   text-align: center;
+}
+
+.form-heading a {
+  font-weight: 300;
+  margin: 60px auto;
+  font-size: 46px;
+  color: black;
+  text-align: left;
+  padding-right: 90px;
 }
 
 .form-body {
