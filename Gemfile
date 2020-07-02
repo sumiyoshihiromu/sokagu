@@ -13,6 +13,7 @@ gem 'mini_magick',  '4.7.0'
 gem 'rails-i18n'
 gem 'bcrypt'
 gem 'data-confirm-modal'
+gem 'kaminari'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
