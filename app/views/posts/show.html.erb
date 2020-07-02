@@ -1,9 +1,9 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-      <div class="post-user-name">
-        <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      <div class="post-show-image">
+        <img src="<%= "/post_images/#{@post.post_image}" %>">
+        
       </div>
       <p>
         <%= @post.content %>
@@ -41,6 +41,18 @@
           <% end %>
         <% end %>
       <% end %>
+      
     </div>
+    
+    <div class="posts-user-show">
+      <div class="post-left">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+      </div>
+      <div class="post-right">
+        <h4>投稿者：<%= link_to(@user.name, "/users/#{@user.id}") %></h4>
+      </div>
+      
+    </div>
+    
   </div>
 </div>

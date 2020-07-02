@@ -49,9 +49,9 @@
 }
 
 .posts-show-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 40%;
+  width: 300px;
+  height: 300px;
+  // border-radius: 40%;
   box-shadow: 0 2px 6px #c1ced7;
   vertical-align: middle;
   object-fit: cover;
@@ -67,6 +67,9 @@
   font-size: 24px;
   margin: 20px 0;
 }
+
+
+
 
 .post-time {
   color: #8899a6;
@@ -96,6 +99,20 @@
   color: #8899a6;
   text-decoration: underline;
   font-size: 14px;
+}
+
+.posts-user-show {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+
+
+.post-show-image{
+  text-align: center;
 }
 
 /* posts/new ================================ */
