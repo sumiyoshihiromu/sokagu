@@ -1,5 +1,11 @@
 <div class="main posts-index">
   <div class="container">
+    <dl class="searchbox">
+      <%= search_form_for @search, url: posts_index_path do |f| %>
+        <dt><%= f.search_field :content_cont, placeholder: "何かお探しですか？" %></dt>
+        <dd><%= f.submit ("検索"), class: 'search-btn' %></dd>
+      <% end %>
+    </dl>
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
